@@ -1002,12 +1002,12 @@ package importedjs {
     }
 
     object CircleConfig {
-      def apply(x: Int = ???,
-                y: Int = ???,
-                radius: Int,
+      def apply(x: Double = ???,
+                y: Double = ???,
+                radius: Double,
                 fill: String = ???,
                 stroke: String = ???,
-                strokeWidth: Int = ???): CircleConfig = {
+                strokeWidth: Double = ???): CircleConfig = {
         js.Dynamic.literal(x = x,
           y = y,
           radius = radius,
