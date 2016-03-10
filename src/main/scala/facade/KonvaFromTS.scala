@@ -11,6 +11,8 @@ package importedjs {
 
   package Konva {
 
+    import scala.scalajs.js
+
 
     object Types {
       type Container = String | HTMLElement | js.Any
@@ -1005,10 +1007,12 @@ package importedjs {
       def apply(x: Double = ???,
                 y: Double = ???,
                 radius: Double,
-                fill: String = ???,
-                stroke: String = ???,
+                fill: String = null,
+                stroke: String = null,
                 strokeWidth: Double = ???): CircleConfig = {
-        js.Dynamic.literal(x = x,
+
+        js.Dynamic.literal(
+          x = x,
           y = y,
           radius = radius,
           fill = fill,
@@ -1079,7 +1083,8 @@ package importedjs {
 
       def image(): HTMLImageElement = js.native
 
-      def image(image: HTMLImageElement): Image = js.native
+      def image(image: Image): Image = js.native
+//      def image(image: HTMLImageElement): Image = js.native
 
       def crop(): SizeConfig = js.native
 
@@ -1100,6 +1105,12 @@ package importedjs {
       def cropHeight(): Double = js.native
 
       def cropHeight(cropHeight: Double): Image = js.native
+    }
+
+    @JSName("Konva.Image")
+    @js.native
+    object Image extends js.Object {
+      def fromURL(url: String, callback: js.Function1[Image, _]):Unit = js.native
     }
 
     @js.native
@@ -1243,6 +1254,14 @@ package importedjs {
       var angle: Double = js.native
       var radius: Double = js.native
       var clockwise: Boolean = js.native
+    }
+
+    object WedgeConfig {
+      def apply(angle: Double,
+                radius: Double,
+                clockwise: Boolean = true): WedgeConfig = {
+        js.Dynamic.literal(angle = angle, radius = radius, clockwise = clockwise).asInstanceOf[WedgeConfig]
+      }
     }
 
     @js.native
@@ -1452,6 +1471,13 @@ package importedjs {
     trait Vector2d extends js.Object {
       var x: Double = js.native
       var y: Double = js.native
+    }
+
+    object Vector2d {
+      def apply(x: Double, y: Double): Vector2d = {
+        js.Dynamic.literal(x = x, y = y).asInstanceOf[Vector2d]
+
+      }
     }
 
     @JSName("Konva")
