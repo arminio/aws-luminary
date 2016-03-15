@@ -1,0 +1,40 @@
+{
+  "Vpcs": [
+    {
+      "VpcId": "vpc-82f29be7",
+      "InstanceTenancy": "default",
+      "Tags": [
+        {
+          "Value": "notification-vpc",
+          "Key": "Name"
+        }
+      ],
+      "State": "available",
+      "DhcpOptionsId": "dopt-5ece163b",
+      "CidrBlock": "192.168.108.0/22",
+      "IsDefault": false
+    },
+    {
+      "VpcId": "vpc-6078f505",
+      "InstanceTenancy": "default",
+      "State": "available",
+      "DhcpOptionsId": "dopt-8c9a6be9",
+      "CidrBlock": "172.31.0.0/16",
+      "IsDefault": true
+    },
+    {
+      "VpcId": "vpc-d144cbb4",
+      "InstanceTenancy": "default",
+      "Tags": [
+        {
+          "Value": "banking-rules-vpc",
+          "Key": "Name"
+        }
+      ],
+      "State": "available",
+      "DhcpOptionsId": "dopt-8bf90aee",
+      "CidrBlock": "192.168.104.0/22",
+      "IsDefault": false
+    }
+  ]
+}

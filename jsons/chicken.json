@@ -1,0 +1,26 @@
+{
+  "Vpcs": [
+    {
+      "VpcId": "vpc-82f29be7",
+      "InstanceTenancy": "default",
+      "Tags": [
+        {
+          "Value": "notification-vpc",
+          "Key": "Name"
+        }
+      ],
+      "State": "available",
+      "DhcpOptionsId": "dopt-5ece163b",
+      "CidrBlock": "192.168.108.0/22",
+      "IsDefault": false
+    },
+    {
+      "VpcId": "vpc-82f29be7",
+      "InstanceTenancy": "default",
+      "State": "available",
+      "DhcpOptionsId": "dopt-5ece163b",
+      "CidrBlock": "192.168.108.0/22",
+      "IsDefault": false
+    }
+  ]
+}

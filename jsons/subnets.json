@@ -1,0 +1,126 @@
+{
+  "Subnets": [
+    {
+      "VpcId": "vpc-82f29be7",
+      "Tags": [
+        {
+          "Value": "notification-elb-subnet-b",
+          "Key": "Name"
+        }
+      ],
+      "CidrBlock": "192.168.108.48/28",
+      "MapPublicIpOnLaunch": false,
+      "DefaultForAz": false,
+      "State": "available",
+      "AvailabilityZone": "ap-southeast-2b",
+      "SubnetId": "subnet-0290c267",
+      "AvailableIpAddressCount": 10
+    },
+    {
+      "VpcId": "vpc-82f29be7",
+      "Tags": [
+        {
+          "Value": "notification-app-subnet-a",
+          "Key": "Name"
+        }
+      ],
+      "CidrBlock": "192.168.108.64/28",
+      "MapPublicIpOnLaunch": false,
+      "DefaultForAz": false,
+      "State": "available",
+      "AvailabilityZone": "ap-southeast-2a",
+      "SubnetId": "subnet-22cab255",
+      "AvailableIpAddressCount": 11
+    },
+    {
+      "VpcId": "vpc-6078f505",
+      "CidrBlock": "172.31.0.0/20",
+      "MapPublicIpOnLaunch": true,
+      "DefaultForAz": true,
+      "State": "available",
+      "AvailabilityZone": "ap-southeast-2b",
+      "SubnetId": "subnet-f3553d96",
+      "AvailableIpAddressCount": 4091
+    },
+    {
+      "VpcId": "vpc-82f29be7",
+      "Tags": [
+        {
+          "Value": "notification-app-subnet-b",
+          "Key": "Name"
+        }
+      ],
+      "CidrBlock": "192.168.108.80/28",
+      "MapPublicIpOnLaunch": false,
+      "DefaultForAz": false,
+      "State": "available",
+      "AvailabilityZone": "ap-southeast-2b",
+      "SubnetId": "subnet-0390c266",
+      "AvailableIpAddressCount": 10
+    },
+    {
+      "VpcId": "vpc-d144cbb4",
+      "Tags": [
+        {
+          "Value": "Jenkins - myob-banking-rules-jenkins-dev",
+          "Key": "Name"
+        },
+        {
+          "Value": "JenkinsSubnet",
+          "Key": "aws:cloudformation:logical-id"
+        },
+        {
+          "Value": "myob-banking-rules-jenkins-dev",
+          "Key": "aws:cloudformation:stack-name"
+        },
+        {
+          "Value": "arn:aws:cloudformation:ap-southeast-2:676890035424:stack/myob-banking-rules-jenkins-dev/3cf7bc50-9330-11e5-9937-5081ed124436",
+          "Key": "aws:cloudformation:stack-id"
+        }
+      ],
+      "CidrBlock": "192.168.104.0/28",
+      "MapPublicIpOnLaunch": false,
+      "DefaultForAz": false,
+      "State": "available",
+      "AvailabilityZone": "ap-southeast-2b",
+      "SubnetId": "subnet-d082e8b5",
+      "AvailableIpAddressCount": 8
+    },
+    {
+      "VpcId": "vpc-82f29be7",
+      "Tags": [
+        {
+          "Value": "notification-elb-subnet-a",
+          "Key": "Name"
+        }
+      ],
+      "CidrBlock": "192.168.108.32/28",
+      "MapPublicIpOnLaunch": false,
+      "DefaultForAz": false,
+      "State": "available",
+      "AvailabilityZone": "ap-southeast-2a",
+      "SubnetId": "subnet-21cab256",
+      "AvailableIpAddressCount": 10
+    },
+    {
+      "VpcId": "vpc-6078f505",
+      "CidrBlock": "172.31.32.0/20",
+      "MapPublicIpOnLaunch": true,
+      "DefaultForAz": true,
+      "State": "available",
+      "AvailabilityZone": "ap-southeast-2c",
+      "SubnetId": "subnet-6f6f3329",
+      "AvailableIpAddressCount": 4091
+    },
+    {
+      "VpcId": "vpc-6078f505",
+      "CidrBlock": "172.31.16.0/20",
+      "MapPublicIpOnLaunch": true,
+      "DefaultForAz": true,
+      "State": "available",
+      "AvailabilityZone": "ap-southeast-2a",
+      "SubnetId": "subnet-d9cb5aae",
+      "AvailableIpAddressCount": 4091
+    }
+  ]
+}
