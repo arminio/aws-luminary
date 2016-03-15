@@ -15,7 +15,7 @@ case class Point(x: Int, y: Int) {
   def /(d: Int) = Point(x / d, y / d)
 }
 
-@JSExport
+//@JSExport
 object ScalaJSExample {
 
   def makeImage(stage: Stage, layer: Layer): Unit = {
@@ -41,7 +41,7 @@ object ScalaJSExample {
           println("o" * 20)
           i.x(stage.getWidth() / 2)
           i.y( stage.getHeight() / 2)
-          println(i.))
+//          println(i.))
           println(i.y())
           layer.add(i)
 
@@ -122,6 +122,7 @@ object ScalaJSExample {
   //
   //    dom.setInterval(() => run, 50)
   //  }
+
   def makeStage: Stage = {
     // first we need to create a stage
     val stage = new Stage(StageConfig(

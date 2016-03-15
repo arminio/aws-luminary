@@ -1022,17 +1022,17 @@ package importedjs {
       }
     }
 
-    //////////////////////
-    trait AjaxOptions extends js.Object {
-      val url: String = js.native
-      val success: js.Function0[Unit] = js.native
-    }
-
-    object AjaxOptions {
-      def apply(url: String, success: js.Function0[Unit]): AjaxOptions = {
-        js.Dynamic.literal(url = url, success = success).asInstanceOf[AjaxOptions]
-      }
-    }
+//    //////////////////////
+//    trait AjaxOptions extends js.Object {
+//      val url: String = js.native
+//      val success: js.Function0[Unit] = js.native
+//    }
+//
+//    object AjaxOptions {
+//      def apply(url: String, success: js.Function0[Unit]): AjaxOptions = {
+//        js.Dynamic.literal(url = url, success = success).asInstanceOf[AjaxOptions]
+//      }
+//    }
 
     //////////////////////
 
