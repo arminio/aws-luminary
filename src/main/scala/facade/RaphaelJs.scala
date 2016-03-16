@@ -50,7 +50,7 @@ package importedjs {
     def data(key: String, value: js.Any): RaphaelElement = js.native
     def dblclick(handler: js.Function): RaphaelElement = js.native
     def drag(onmove: js.Function5[Double, Double, Double, Double, DragEvent, js.Any], onstart: js.Function3[Double, Double, DragEvent, js.Any], onend: js.Function1[js.Any, js.Any], mcontext: js.Any = ???, scontext: js.Any = ???, econtext: js.Any = ???): RaphaelElement = js.native
-    def getBBox(isWithoutTransform: Boolean = ???): BoundingBox = js.native
+    def getBBox(isWithoutTransform: Boolean = false): BoundingBox = js.native
     def glow(glow: js.Any = ???): RaphaelSet = js.native
     def hide(): RaphaelElement = js.native
     def hover(f_in: js.Function, f_out: js.Function, icontext: js.Any = ???, ocontext: js.Any = ???): RaphaelElement = js.native
@@ -142,7 +142,7 @@ package importedjs {
     def data(key: String, value: js.Any): RaphaelSet = js.native
     def dblclick(handler: js.Function): RaphaelSet = js.native
     def drag(onmove: js.Function5[Double, Double, Double, Double, DragEvent, js.Any], onstart: js.Function3[Double, Double, DragEvent, js.Any], onend: js.Function1[js.Any, js.Any], mcontext: js.Any = ???, scontext: js.Any = ???, econtext: js.Any = ???): RaphaelSet = js.native
-    def getBBox(isWithoutTransform: Boolean = ???): BoundingBox = js.native
+    def getBBox(isWithoutTransform: Boolean = false): BoundingBox = js.native
     def glow(glow: js.Any = ???): RaphaelSet = js.native
     def hide(): RaphaelSet = js.native
     def hover(f_in: js.Function, f_out: js.Function, icontext: js.Any = ???, ocontext: js.Any = ???): RaphaelSet = js.native

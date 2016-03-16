@@ -15,7 +15,11 @@ libraryDependencies ++= Seq(
 
 
 
-jsDependencies += "org.webjars.npm" % "konva" % "0.11.1" / "konva.js"
+jsDependencies ++= Seq(
+//  "org.webjars.npm" % "konva" % "0.11.1" / "konva.js",
+//  "org.webjars.bower" % "raphael" % "2.1.4" / "raphael.js"
+  "org.webjars.bower" % "raphael" % "2.1.4" / "raphael.js"
+                       )
 
 bootSnippet := "example.d3.ScalaJSExample().main();"
 
