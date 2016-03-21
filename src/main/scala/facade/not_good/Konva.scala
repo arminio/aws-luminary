@@ -1,4 +1,4 @@
-package facade
+package facade.not_good
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName

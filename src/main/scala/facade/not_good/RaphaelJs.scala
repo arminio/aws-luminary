@@ -1,14 +1,10 @@
-package facade
+package facade.not_good
 
+import org.scalajs.dom.raw.{HTMLElement, SVGDefsElement, SVGElement, SVGSVGElement}
+import org.scalajs.dom.{DragEvent, Window}
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package importedjs {
-
-  import org.scalajs.dom.{DragEvent, Window}
-  import org.scalajs.dom.raw.{SVGElement, HTMLElement, SVGDefsElement, SVGSVGElement}
+import scala.scalajs.js.annotation._
 
   @js.native
   trait BoundingBox extends js.Object {
@@ -313,5 +309,3 @@ package importedjs {
   object Importedjs extends js.GlobalScope {
     var Raphael: RaphaelStatic = js.native
   }
-
-}

@@ -1,13 +1,8 @@
 package example
 
-import facade.importedjs.Konva._
-import org.scalajs.dom
-import org.scalajs.dom.html
-import org.scalajs.dom.raw.{HTMLImageElement, HTMLElement}
+import facade.not_good._
 
-import scala.scalajs.js
 import scala.scalajs.js.annotation.JSExport
-import scala.util.Random
 
 case class Point(x: Int, y: Int) {
   def +(p: Point) = Point(x + p.x, y + p.y)

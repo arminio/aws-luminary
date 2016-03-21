@@ -1,17 +1,11 @@
-package facade
+package facade.not_good
 
-
-import scala.scalajs.js
-import js.annotation._
-import js.|
 import org.scalajs.dom.CanvasRenderingContext2D
 import org.scalajs.dom.raw.{HTMLElement, HTMLImageElement}
 
-package importedjs {
-
-  package Konva {
-
-    import scala.scalajs.js
+import scala.scalajs.js
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
 
     object Types {
@@ -1489,7 +1483,3 @@ package importedjs {
       var isDragReady: js.Function0[Boolean] = js.native
       var DD: js.Any = js.native
     }
-
-  }
-
-}
