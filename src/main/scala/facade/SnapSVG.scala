@@ -1,7 +1,7 @@
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
 package importedjs {
 
@@ -64,8 +64,8 @@ object Mina extends js.Object {
 
 package Snap {
 
-  import org.scalajs.dom.{XMLHttpRequest, MouseEvent}
-  import org.scalajs.dom.raw.{SVGMatrix, HTMLElement}
+  import org.scalajs.dom.raw.{HTMLElement, SVGMatrix}
+  import org.scalajs.dom.{MouseEvent, XMLHttpRequest}
 
   import scala.scalajs.js.annotation.JSName
 
@@ -409,19 +409,23 @@ object Snap extends js.Object {
 
 }
 
-@js.native
-object Importedjs extends js.GlobalScope {
-  def mina(a: Double,
-           A: Double,
-           b: Double,
-           B: Double,
-           get: js.Function,
-           set: js.Function,
-           easing: js.Function1[Double, Double] = ???): AnimationDescriptor = js.native
+  @js.native
+  object Importedjs extends js.GlobalScope {
 
-  def Snap(width: Double | String, height: Double | String): Paper = js.native
-  def Snap(query: String): Paper = js.native
-  def Snap(DOM: SVGElement): Paper = js.native
-}
+    def Snap(query: String): Paper = js.native
+
+    def mina(a: Double,
+             A: Double,
+             b: Double,
+             B: Double,
+             get: js.Function,
+             set: js.Function,
+             easing: js.Function1[Double, Double] = ???): AnimationDescriptor = js.native
+
+    def Snap(width: Double | String, height: Double | String): Paper = js.native
+
+
+    def Snap(DOM: SVGElement): Paper = js.native
+  }
 
 }

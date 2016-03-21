@@ -18,7 +18,7 @@ object ScalaJSExample {
   def main(): Unit = {
     val s = Snap(800, 600);
     // Lets create big circle in the middle:
-    var bigCircle = s.circle(150, 150, 100);
+    var bigCircle = s.circle(150, 150, 100)
   }
 
 
