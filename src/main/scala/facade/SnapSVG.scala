@@ -6,6 +6,7 @@ import js.|
 package importedjs {
 
   import importedjs.Snap.Paper
+  import importedjs.mina.AnimationDescriptor
   import org.scalajs.dom.raw.SVGElement
 
   package mina {
@@ -218,7 +219,7 @@ trait Element extends js.Object {
   def untouchend(handler: js.Function1[MouseEvent, Unit]): Element = js.native
   def untouchcancel(handler: js.Function1[MouseEvent, Unit]): Element = js.native
   def hover(hoverInHandler: js.Function1[MouseEvent, Unit], hoverOutHandler: js.Function1[MouseEvent, Unit], thisArg: js.Any = ???): Element = js.native
-  def hover(hoverInHandler: js.Function1[MouseEvent, Unit], hoverOutHandler: js.Function1[MouseEvent, Unit], inThisArg: js.Any = ???, outThisArg: js.Any = ???): Element = js.native
+  def hoverJS(hoverInHandler: js.Function1[MouseEvent, Unit], hoverOutHandler: js.Function1[MouseEvent, Unit], inThisArg: js.Any = ???, outThisArg: js.Any = ???): Element = js.native
   def unhover(hoverInHandler: js.Function1[MouseEvent, Unit], hoverOutHandler: js.Function1[MouseEvent, Unit]): Element = js.native
   def drag(): Element = js.native
   def drag(onMove: js.Function5[Double, Double, Double, Double, MouseEvent, Unit], onStart: js.Function3[Double, Double, MouseEvent, Unit], onEnd: js.Function1[MouseEvent, Unit], moveThisArg: js.Any = ???, startThisArg: js.Any = ???, endThisArg: js.Any = ???): Element = js.native
@@ -275,7 +276,7 @@ trait Paper extends Element {
   @JSName("toString")
   override def toStringJS(): String = js.native
   def use(id: String = ???): Object = js.native
-  def use(id: Element = ???): Object = js.native
+  def useJs(id: Element = ???): Object = js.native
   def circle(x: Double, y: Double, r: Double): Element = js.native
   def ellipse(x: Double, y: Double, rx: Double, ry: Double): Element = js.native
   def image(src: String, x: Double, y: Double, width: Double, height: Double): Element = js.native
@@ -364,8 +365,8 @@ object Snap extends js.Object {
   def matrix(a: Double, b: Double, c: Double, d: Double, e: Double, f: Double): Matrix = js.native
   def matrix(svgMatrix: SVGMatrix): Matrix = js.native
   def ajax(url: String, postData: String, callback: js.Function, scope: Object = ???): XMLHttpRequest = js.native
-  def ajax(url: String, postData: Object, callback: js.Function, scope: Object = ???): XMLHttpRequest = js.native
-  def ajax(url: String, callback: js.Function, scope: Object = ???): XMLHttpRequest = js.native
+  def ajaxJS(url: String, postData: Object, callback: js.Function, scope: Object = ???): XMLHttpRequest = js.native
+  def ajaxJS1(url: String, callback: js.Function, scope: Object = ???): XMLHttpRequest = js.native
   def format(token: String, json: Object): String = js.native
   def fragment(varargs: js.Any): Fragment = js.native
   def getElementByPoint(x: Double, y: Double): Element = js.native
@@ -410,7 +411,14 @@ object Snap extends js.Object {
 
 @js.native
 object Importedjs extends js.GlobalScope {
-  def mina(a: Double, A: Double, b: Double, B: Double, get: js.Function, set: js.Function, easing: js.Function1[Double, Double] = ???): mina.AnimationDescriptor = js.native
+  def mina(a: Double,
+           A: Double,
+           b: Double,
+           B: Double,
+           get: js.Function,
+           set: js.Function,
+           easing: js.Function1[Double, Double] = ???): AnimationDescriptor = js.native
+
   def Snap(width: Double | String, height: Double | String): Paper = js.native
   def Snap(query: String): Paper = js.native
   def Snap(DOM: SVGElement): Paper = js.native
