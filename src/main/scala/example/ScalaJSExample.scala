@@ -83,7 +83,7 @@ c.drag()
 
 
     loadSvg("svg/aws/box.svg", g)
-//    loadSvg("svg/aws/bucketbox.svg", g)
+    loadSvg("svg/aws/bucketbox.svg", g)
 //    c.hover(hoverover, hoverout)
 
 
