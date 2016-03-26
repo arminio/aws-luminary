@@ -1,17 +1,15 @@
 package example
 
-import importedjs.Importedjs
 import importedjs.Importedjs.Snap
 import importedjs.Snap.{Element, Fragment, SnapObj}
 import importedjs.mina.MinaObj
 import org.scalajs.dom._
-import org.scalajs.dom.raw.Node
-import scala.scalajs.js
-import scala.scalajs.js.Dynamic.{global => glb, literal}
 
 import scala.scalajs.js
+import scala.scalajs.js.Dynamic.{literal, global => glb}
 import scala.scalajs.js.annotation.JSExport
-import scala.scalajs.js.|
+import scala.scalajs.js.{Function1, |}
+import scala.util.Random
 
 case class Point(x: Int, y: Int) {
   def +(p: Point) = Point(x + p.x, y + p.y)
@@ -24,60 +22,103 @@ object ScalaJSExample {
 
   type Dict = js.Dictionary[String | Double | Boolean | js.Any]
 
+
+  val myMatrix = SnapObj.matrix()
+  //    myMatrix.scale(4, 2); // play with scaling before and after the rotate
+  myMatrix.translate(200, 400);
+  // this translate will not be applied to the rotation
+  //    myMatrix.rotate(45); // rotate
+
+  //    val myInvertedMatrix = myMatrix.invert();
+  val string: String = myMatrix.toTransformString()
+
+
+  def randomTransformation() = {
+    val myMatrix = SnapObj.matrix()
+    myMatrix.scale(0.4); // play with scaling before and after the rotate
+    myMatrix.translate(Random.nextDouble() * 400, Random.nextDouble() * 700); // this translate will not be applied to the rotation
+    //    myMatrix.rotate(45); // rotate
+
+    //    val myInvertedMatrix = myMatrix.invert();
+    val transformString: String = myMatrix.toTransformString()
+
+    glb.console.log(transformString)
+    transformString
+  }
+
+  val s = Snap(1800, 900)
+
   @JSExport
   def main(): Unit = {
-    val s = Snap(800, 600)
     // Lets create big circle in the middle:
-    val g: Element = s.group()
+    val g = s.group()
 
-    //    val c = s.circle(150, 150, 100)
-    //    c.attr(js.Dynamic.literal(
-    //      "fill" -> "#bada55",
-    //      "stroke" -> "#000",
-    //      "strokeWidth" -> 5))
-
-    //    c.attr(js.Dynamic.literal("fill" -> "red"))
-    //     g.append(c)
-    val hoverover: js.Function1[MouseEvent, Unit] = (me: MouseEvent) => {
+    val c = s.circle(150, 150, 100)
+c.drag()
+    val hoverover: Function1[MouseEvent, Unit] = (me: MouseEvent) => {
       //      g.attr(js.Dynamic.literal("fill" -> "blue"))
-      g.animate(literal("transform" -> "s2r45,150,150"),
+      g.animate(literal("transform" -> "s0.52"),
         1000d,
         (y: Double) => MinaObj.bounce(y))
 
+      c.attr(literal("fill" -> "pink",
+        "stroke" -> "yellow",
+        "strokeWidth" -> 15))
+      println("hoverover")
 
-      ()
     }
-    //    def clicken = (me: MouseEvent) => {
-    //      //      g.attr(js.Dynamic.literal("fill" -> "blue"))
-    //      glb.console.log("boooooo click")
-    //      ()
-    //    }
-    val hoverout: js.Function1[MouseEvent, Unit] = (me: MouseEvent) => {
+
+    val hoverout: Function1[MouseEvent, Unit] = (me: MouseEvent) => {
       g.animate(literal("transform" -> "s1r0,150,150"),
         1000d,
         (y: Double) => MinaObj.bounce(y))
 
-      ()
+      c.attr(literal("fill" -> "blue",
+        "stroke" -> "black",
+        "strokeWidth" -> 13))
+
+      println("hoverout")
+
     }
 
-    //    c.click(clicken)
-    //    c.hover(hoverover, hoverout)
 
-    //    g.hover(hoverover, hoverout)
-    //    SnapObj.load("http://www.html5rocks.com/static/demos/svgmobile_fundamentals/images/HTML5-logo.svg",
-    SnapObj.load("HTML5-logo.svg",
-      (x: Fragment) => {
-        glb.console.log(x)
-        println(x)
-        g.append(x)
-        g.attr(literal("scale" -> "2"))
-        //        g.click(clicken)
+    loadSvg("svg/aws/box.svg", g)
+//    loadSvg("svg/aws/bucketbox.svg", g)
+//    c.hover(hoverover, hoverout)
 
-      })
-    g.hover(hoverover, hoverout)
 
+    //    val myMatrix = SnapObj.matrix()
+    ////    myMatrix.scale(4, 2); // play with scaling before and after the rotate
+    //    myMatrix.translate(200, 200); // this translate will not be applied to the rotation
+    //    myMatrix.rotate(45); // rotate
+
+    //    val myInvertedMatrix = myMatrix.invert();
+
+
+    //    g.animate(literal("transform" -> myMatrix), 3000, (y: Double) => MinaObj.bounce(y));
+
+    //    g.transform(s"t${Random.nextDouble() * 1000},200")
+
+    //    println(string)
+    //    c.transform(string)
 
   }
 
 
+  private def loadSvg(url: String, g: Element): Unit = {
+    SnapObj.load(url,
+      (x: Fragment) => {
+        val elemId = "#box_g"
+        val e = x.select(elemId)
+        glb.console.log(x)
+        glb.console.log(elemId + " => ")
+//        glb.console.log(e.children())
+
+
+
+        val e2 = e.transform(randomTransformation)
+        s.append(e2)
+        e2.drag()
+      })
+  }
 }
